@@ -44,9 +44,17 @@ export default {
 </script>
 
 <style lang="scss">
+body{
+  width: 100%;
+  height: 100%;
+  background-color: #1e1e1e;
+  padding: 0;
+  margin: 0;
+
+}
 
 .container{
-  width: 100vw;
+  width: 100%;
   height: 100%;
   .body{
     width: 100%;
@@ -66,7 +74,7 @@ export default {
       }
     }
     .content{
-      margin-top: 5%;
+      margin-top: 8%;
       width: 100%;
       height: 50%;
       justify-content: center;
@@ -90,7 +98,7 @@ export default {
         box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
       }
       .box:active{
-        color: black;
+        color: #acacac;
         box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
       }
 

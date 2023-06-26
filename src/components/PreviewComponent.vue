@@ -8,7 +8,7 @@
       <TableComponent></TableComponent>
     </div>
     <div class="next">
-      <button class="button-85" role="button">Next</button>
+      <button class="button-85" role="button" @click="action">Next</button>
     </div>
   </div>
 </template>
@@ -20,6 +20,11 @@ export default {
   components: {
     TableComponent,
   },
+  methods:{
+    action(){
+        this.$router.push('/playground')
+    }
+  }
 };
 </script>
 

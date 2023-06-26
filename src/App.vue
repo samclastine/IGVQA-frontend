@@ -4,7 +4,7 @@
   <router-view/>
 </template>
 
-<style>
+<style scoped>
 body{
   margin: 0;
   display: flex;

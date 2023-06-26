@@ -34,8 +34,7 @@ export default {
   },
 
   methods: {
-    tableRowClassName({ row, rowIndex }) {
-    console.log(rowIndex);
+    tableRowClassName({ row }) {
       if (row.launch_success == true) {
         return "success-row";
         
