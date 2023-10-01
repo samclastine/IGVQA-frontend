@@ -6,13 +6,12 @@
       </div>
       <div class="content" >
         
-        <div class="box" @click="showModal">Load CSV/XSLS file</div>
+        <div class="box" @click="showModal">Click here!</div>
         <transition name="fade" appear>
           <ModalComponent v-if="isModalOpen" @close="closeModal"   class="modal">
         </ModalComponent>
         </transition>
 
-        <div class="box">Connect to SQL</div>
       </div>
 
     </div>
@@ -81,7 +80,7 @@ body{
       align-items: center;
       display: flex;
       .box{
-        width: 120px;
+        width: 10%;
         height: 120px;
         text-align: center;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;

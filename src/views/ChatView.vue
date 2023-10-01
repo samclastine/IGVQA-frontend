@@ -1,20 +1,23 @@
 <template>
   <div id="app-chat">
+    <SidebarComponent class="sidebar-container"></SidebarComponent>
     <ChatBox class="chatbox"></ChatBox>
-    <PlayGround class="image-container"></PlayGround>
+    
   </div>
 </template>
   
   <script>
 import ChatBox from "../components/ChatBoxComponent.vue";
-import PlayGround from "../components/PlayGroundComponent.vue"
+// import PlayGround from "../components/PlayGroundComponent.vue"
+import SidebarComponent from '@/components/SidebarComponent.vue'
+
 
 export default {
   name: "ChatView",
   components: {
     ChatBox,
-    PlayGround
-  },
+    SidebarComponent 
+   },
 };
 </script>
   <style lang="scss">
@@ -26,14 +29,16 @@ export default {
   margin: 0;
   display: flex;
   flex-direction: row;
+  .sidebar-container{
+    width: 20%;
+    height: 100%;
+  }
   .chatbox{
-    width: 30%;
+    width: 80%;
     height: 100%;
   }
-  .image-container{
-    width: 70%;
-    height: 100%;
-  }
+
+
 
 }
 </style>

@@ -5,6 +5,7 @@
       <button @click="closeModal" class="modal-close">X</button>
     </div>
     <div class="modal-content">
+      
       <div class="drop-zone" @dragenter="dragEnter" @dragover.prevent @dragleave="dragLeave" @drop="handleDrop">
         <p class="drop-message">{{ dropMessage }}</p>
       </div>
@@ -16,6 +17,13 @@
 import Papa from 'papaparse';
 import { mapActions } from 'vuex';
 import axios from 'axios';
+import * as d3 from "d3";
+// import vegaEmbed from 'vega-embed';
+
+
+
+
+
 
 export default {
   name: 'ModalComponent',
@@ -25,6 +33,7 @@ export default {
   data() {
     return {
       dropMessage: 'Drag and drop a CSV file here',
+      vegaSpec: null,
     };
   },
   methods: {
@@ -46,7 +55,9 @@ export default {
         const file = files[0];
         if (file.type === 'text/csv') {
           // Handle the CSV file here
+
           this.processCSVFile(file);
+
         } else {
           this.dropMessage = 'Please drop a valid CSV file';
         }
@@ -59,6 +70,8 @@ export default {
         // Process the CSV data
         const result = Papa.parse(csvData, { header: true });
         this.loadCSVData(result);
+        const filename = file.name;
+        console.log(filename);
         const formData = new FormData();
         
         
@@ -75,11 +88,38 @@ export default {
         }).catch(err => {
           console.log(err.response);
         });
-        console.log(result);
         this.$router.push('/preview')
+        // Create a Blob with the CSV data
+        console.log("***************************",this);
+        const _this = this
+        const csvBlob = new Blob([csvData], { type: 'text/csv' });
+        d3.csv(URL.createObjectURL(csvBlob)).then(function(data) {
+          // // const vegaSpec = {
+          // //   $schema: 'https://vega.github.io/schema/vega-lite/v4.json',
+          // //   width: 400,
+          // //   height: 200,
+          // //   mark: 'point',
+          // //   encoding: {
+          // //     x: { field: 'Rotten Tomatoes Rating', type: 'quantitative' },
+          // //     y: { field: 'IMDB Rating', type: 'quantitative' },
+          // //   },
+          //   data: { values: data },
+          // };
+          // vegaEmbed(_this.$refs.vega, vegaSpec);
+          // console.log(data);
+          _this.$store.dispatch('updateData', data);
+        });
+
+
+
       };
       reader.readAsText(file);
     },
+    processData(data) {
+  // Process and format the data as needed
+  // This function depends on the structure of your data file
+    return data;
+    }
   },
 };
 </script>

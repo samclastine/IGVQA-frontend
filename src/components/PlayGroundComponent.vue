@@ -43,58 +43,58 @@ export default {
             y: 0,
         };
     },
-    methods: {
-        handleDrop(event) {
-            event.preventDefault();
-            const file = event.dataTransfer.files[0];
-            const reader = new FileReader();
-            var tempImg = {}
-            reader.onload = () => {
-                tempImg.x = 500
-                tempImg.y = 200
-                tempImg.height = 100
-                tempImg.width = 100
-                tempImg.img = reader.result;
-                this.src.push(tempImg)
-                console.log(this.src);
-            };
-            reader.readAsDataURL(file);
-        },
-        onResize(x, y, width, height) {
-            this.x = x
-            this.y = y
-            this.width = width
-            this.height = height
-            this.$refs.imgRef.width = width
-            this.$refs.imgRef.height = height
-            console.log(height);
-        },
-        onDrag(x, y) {
-            this.x = x
-            this.y = y
-        },
-        onFileSelected (e) {
-      var files = e.target.files || e.dataTransfer.files
-      if (!files.length) {
-        return
-      }
-      this.createImage(files[0])
-    },
-        createImage (file) {
-      var reader = new FileReader()
-      var tempImg = {}
-      reader.onload = (e) => {
-        tempImg.x = 500
-        tempImg.y = 200
-        tempImg.height = 100
-        tempImg.width = 100
-        tempImg.img = e.target.result
-        this.src.push(tempImg)
-      }
-      reader.readAsDataURL(file)
-    }
+    // methods: {
+    //     handleDrop(event) {
+    //         event.preventDefault();
+    //         const file = event.dataTransfer.files[0];
+    //         const reader = new FileReader();
+    //         var tempImg = {}
+    //         reader.onload = () => {
+    //             tempImg.x = 500
+    //             tempImg.y = 200
+    //             tempImg.height = 100
+    //             tempImg.width = 100
+    //             tempImg.img = reader.result;
+    //             this.src.push(tempImg)
+    //             console.log(this.src);
+    //         };
+    //         reader.readAsDataURL(file);
+    //     },
+    //     onResize(x, y, width, height) {
+    //         this.x = x
+    //         this.y = y
+    //         this.width = width
+    //         this.height = height
+    //         this.$refs.imgRef.width = width
+    //         this.$refs.imgRef.height = height
+    //         console.log(height);
+    //     },
+    //     onDrag(x, y) {
+    //         this.x = x
+    //         this.y = y
+    //     },
+    //     onFileSelected (e) {
+    //   var files = e.target.files || e.dataTransfer.files
+    //   if (!files.length) {
+    //     return
+    //   }
+    //   this.createImage(files[0])
+    // },
+    //     createImage (file) {
+    //   var reader = new FileReader()
+    //   var tempImg = {}
+    //   reader.onload = (e) => {
+    //     tempImg.x = 500
+    //     tempImg.y = 200
+    //     tempImg.height = 100
+    //     tempImg.width = 100
+    //     tempImg.img = e.target.result
+    //     this.src.push(tempImg)
+    //   }
+    //   reader.readAsDataURL(file)
+    // }
   
-    },
+    // },
 };
 </script>
   

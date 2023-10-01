@@ -10,7 +10,6 @@ body{
   display: flex;
 }
 #app {
-
   display: flex;
   width: 100vw;
   height: 100vh;
