@@ -1,33 +1,64 @@
 <template>
-    <router-link to="/"></router-link>
-    <router-link to="/preview"></router-link> 
-  <router-view/>
+  <div id="appContainer">
+    <nav>
+      <router-link to="/"></router-link>
+      <router-link to="/preview"></router-link>
+    </nav>
+    <router-view />
+  </div>
 </template>
 
-<style scoped>
-body{
+<style >
+
+
+
+
+html, body {
   margin: 0;
-  display: flex;
+  padding: 0;
 }
+body {
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+}
+#appcontainer{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
 #app {
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  margin: 0 !important;
   padding: 0;
-  margin: 0;
-  background-color: #1e1e1e;
+  flex-direction: column;
+
 }
 
 nav {
-  padding: 0;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* nav a {
-  font-weight: bold;
+  margin: 0 15px;
+  text-decoration: none;
   color: #2c3e50;
 }
 
 nav a.router-link-exact-active {
   color: #42b983;
 } */
+
+router-view {
+  margin: 0 !important;
+  flex: 1 ;
+  display: flex;
+  flex-direction: column;
+}
 </style>

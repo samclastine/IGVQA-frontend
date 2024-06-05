@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import DataPreviewView from '../views/DataPreviewView.vue'
 import ChatView from '../views/ChatView.vue'
-
+import SelectionView from '../views/SelectionDashboardView.vue'
 const routes = [
   {
     path: '/',
@@ -19,6 +19,12 @@ const routes = [
     name: 'playground',
     component: ChatView
   },
+  { 
+    path: '/selection',
+    name: 'ProcessSelection',
+    component: SelectionView
+
+  }
   // {
   //   path: '/about',
   //   name: 'about',

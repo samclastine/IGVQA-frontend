@@ -6,7 +6,7 @@
       </div>
       <div class="content" >
         
-        <div class="box" @click="showModal">Click here!</div>
+        <div class="box" @click="showModal">Upload File</div>
         <transition name="fade" appear>
           <ModalComponent v-if="isModalOpen" @close="closeModal"   class="modal">
         </ModalComponent>
