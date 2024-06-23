@@ -79,7 +79,7 @@ export default {
           const js =  JSON.stringify(result[key])
           formData.append(key, js);
         }
-        axios.post(' http://127.0.0.1:5000/postcsv', formData, {
+        axios.post('http://54.90.227.128:5000/postcsv', formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
