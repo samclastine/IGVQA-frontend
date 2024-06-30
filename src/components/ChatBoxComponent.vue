@@ -160,7 +160,7 @@ export default {
   methods: {
     async fetchMessages() {
       try {
-        const response = await axios.get('http://127.0.0.1:5000/messages');
+        const response = await axios.get('https://ne0627gzr9.execute-api.us-east-1.amazonaws.com/messages');
         this.messages = response.data;
       } catch (error) {
         console.error('Failed to fetch messages:', error);
@@ -178,7 +178,7 @@ export default {
       var idx=0
       try {
         formData.append(idx+1,JSON.stringify(userMessage))
-        await axios.post('http://127.0.0.1:5000/messages',formData).then((response)=>{
+        await axios.post('https://ne0627gzr9.execute-api.us-east-1.amazonaws.com/messages',formData).then((response)=>{
           console.log(response.data);
           this.messages.push(response.data);
           console.log("im fro chat compo", this.data);
