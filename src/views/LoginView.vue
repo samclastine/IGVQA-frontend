@@ -6,7 +6,7 @@
       </div>
       <h2>Welcome Back</h2>
       <h4>Please enter you details to sign in</h4>
-      <form @submit.prevent="handleLogin">
+      <form >
         <div class="form-group">
           <label for="email">Email</label>
           <el-input v-model="email" style="width: 240px" placeholder="Email" />
@@ -21,7 +21,7 @@
             show-password
           />
         </div>
-        <el-button type="submit" style="background-color: #4caf50" color="#4caf50" round>Login</el-button>
+        <el-button type="submit" style="background-color: #4caf50" color="#4caf50" @click="handleLogin" round>Login</el-button>
         <el-checkbox v-model="checked4" label="Remember me" fill="#4caf50" style="margin-top: 15px;"/>
         <h4 style="margin-bottom: 10px; ">Dont have an account yet? <b @click="SignupAction" style="cursor: pointer;">Sign Up</b> </h4>
       </form>
