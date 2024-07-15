@@ -1,4 +1,5 @@
 import { createStore } from 'vuex';
+import authModule from "./auth/index";
 
 export default createStore({
   state: {
@@ -26,5 +27,7 @@ export default createStore({
       commit('setFData', newData); // Corrected mutation name
     },
   },
-  modules: {},
+  modules: {
+    authModule
+  },
 });

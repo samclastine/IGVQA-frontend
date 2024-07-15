@@ -50,7 +50,7 @@ export default {
   methods: {
     handleLogin() {
       // Handle login logic here
-      console.log("Login:", this.email, this.password);
+      this.$router.push({ name: "selection" });
     },
     SignupAction(){
       this.$router.push('/signup')

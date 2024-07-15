@@ -88,14 +88,17 @@ export default {
                 return;
             }
             else{
-                const { isSignUpComplete, userId, nextStep } = await signUp({
+                const {userId } = await signUp({
                     username: this.email,
-                    email: this.email,
                     password: this.password
 
                 })
-                this.$router.push({ name: 'confirm-signup', query: { userId: this.email } });
-                console.log(isSignUpComplete, userId, nextStep);
+                console.log(userId);
+                this.$store.dispatch('setEmail',this.email)
+                this.$store.dispatch('setUsername', userId)
+                this.$router.push({ name: 'confirm-signup'});
+            
+
 
             }
             console.log("Signup:", this.email, this.password);
