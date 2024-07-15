@@ -7,7 +7,7 @@
     <div class="parent-container">
       <div id="slide1" class="slides">
         <div class="text-container">
-          <h1>NLVI - AI for Data Visualization</h1>
+          <h1>AIVA - AI for Visual Analytics</h1>
           <p>Powered by Vegalite</p>
         </div>
         <div class="button-container">

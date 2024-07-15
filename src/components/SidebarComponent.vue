@@ -1,6 +1,6 @@
 <template>
   <div class="hero-sidebar">
-    <p class="logo">IGVQA</p>
+    <p class="logo">AIVA</p>
     
     <div class="container">
         <div class="text-con-cont">

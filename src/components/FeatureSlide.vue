@@ -3,7 +3,7 @@
       <div class="text-container">
         <h1>Transform Your Data into Visual Insights</h1>
         <p>
-          NLVI is an advanced AI tool that allows you to generate insightful charts
+          AIVA is an advanced AI tool that allows you to generate insightful charts
           and graphs simply by using natural language queries. Say goodbye to complex
           data visualization tools and hello to effortless insights.
         </p>

@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-aivafrontend-dev-1711e-authRole",
+      "UnauthRoleArn": "arn:aws:iam::591664060576:role/amplify-aivafrontend-dev-1711e-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::591664060576:role/amplify-aivafrontend-dev-1711e-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-aivafrontend-dev-1711e-deployment",
+      "UnauthRoleName": "amplify-aivafrontend-dev-1711e-unauthRole",
+      "StackName": "amplify-aivafrontend-dev-1711e",
+      "StackId": "arn:aws:cloudformation:us-east-1:591664060576:stack/amplify-aivafrontend-dev-1711e/f121e440-4203-11ef-a10a-0ec053052447",
+      "AmplifyAppId": "d309bu5j6jx22h"
+    },
+    "categories": {
+      "auth": {
+        "aivafrontendb7057a41": {}
+      }
+    }
+  }
+}

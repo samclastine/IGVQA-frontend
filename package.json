@@ -1,5 +1,5 @@
 {
-  "name": "igvqa-frontend",
+  "name": "AIVA",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@aws-amplify/auth": "^6.3.8",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/vue-fontawesome": "^3.0.8",
@@ -15,6 +16,7 @@
     "@mdi/font": "^7.4.47",
     "@pqina/vue-pintura": "^9.0.1",
     "@vue-hero-icons/outline": "^1.7.2",
+    "aws-amplify": "^6.4.0",
     "axios": "^1.4.0",
     "core-js": "^3.8.3",
     "cors": "^2.8.5",
@@ -28,6 +30,7 @@
     "vue-meta": "^3.0.0-alpha.2",
     "vue-router": "^4.0.3",
     "vue3-lottie": "^3.3.0",
+    "vuetify": "^3.6.12",
     "vuex": "^4.0.0"
   },
   "devDependencies": {

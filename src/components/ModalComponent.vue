@@ -79,7 +79,7 @@ export default {
           const js =  JSON.stringify(result[key])
           formData.append(key, js);
         }
-        axios.post('https://ne0627gzr9.execute-api.us-east-1.amazonaws.com/postcsv', formData, {
+        axios.post(`${process.env.VUE_APP_ROOT_API}/postcsv`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
@@ -90,7 +90,6 @@ export default {
         });
         this.$router.push('/preview')
         // Create a Blob with the CSV data
-        console.log("***************************",this);
         const _this = this
         const csvBlob = new Blob([csvData], { type: 'text/csv' });
         d3.csv(URL.createObjectURL(csvBlob)).then(function(data) {

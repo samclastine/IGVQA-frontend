@@ -2,7 +2,7 @@
   <div class="container" :class="{ 'modal-open': isModalOpen }">
     <div class="body" >
       <div class="logo" >
-        <span :class="{ 'modal-open-logo': isModalOpen }">IGVQA</span>
+        <span :class="{ 'modal-open-logo': isModalOpen }">AIVA</span>
       </div>
       <div class="content" >
         

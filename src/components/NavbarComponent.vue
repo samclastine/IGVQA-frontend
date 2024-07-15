@@ -3,7 +3,7 @@
       <div class="container">
         <div class="navbar-brand">
           <font-awesome-icon :icon="['fas', 'chart-bar']" class="brand-icon" />
-          NLVI
+          AIVA
         </div>
         <div class="navbar-menu">
           <button class="login-button" @click="login">Login</button>
@@ -26,7 +26,7 @@
     },
     methods: {
       login() {
-        this.$router.push({ name: 'Login' });
+        this.$router.push({ name: 'login' });
       }
     }
   };
