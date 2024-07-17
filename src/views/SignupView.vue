@@ -90,6 +90,7 @@ export default {
             else{
                 const {userId } = await signUp({
                     username: this.email,
+                    preferred_username: this.username,
                     password: this.password
 
                 })

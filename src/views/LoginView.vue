@@ -21,7 +21,7 @@
             show-password
           />
         </div>
-        <el-button type="submit" style="background-color: #4caf50" color="#4caf50" @click="handleLogin" round>Login</el-button>
+        <el-button type="submit" style="background-color: #4caf50" color="#4caf50" @click="handleSignIn" round>Login</el-button>
         <el-checkbox v-model="checked4" label="Remember me" fill="#4caf50" style="margin-top: 15px;"/>
         <h4 style="margin-bottom: 10px; ">Dont have an account yet? <b @click="SignupAction" style="cursor: pointer;">Sign Up</b> </h4>
       </form>
@@ -33,7 +33,8 @@
   import { library } from '@fortawesome/fontawesome-svg-core';
   import { faChartBar } from '@fortawesome/free-solid-svg-icons';
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-  
+  import { signIn , signOut, fetchAuthSession} from 'aws-amplify/auth';
+
   library.add(faChartBar);
 
 export default {
@@ -48,9 +49,31 @@ export default {
     };
   },
   methods: {
-    handleLogin() {
+    async  handleSignIn() {
+      const idToken = (await fetchAuthSession()).tokens?.idToken;
+      if (idToken) {
+          await signOut();
+      }
+      
+      try {
+        const { isSignedIn, nextStep } = await signIn({ username:this.email, password:this.password });
+        this.$store.dispatch('setIsAuthenticated',isSignedIn)
+        console.log(this.$store.getters.isAuthenticated, nextStep);
+        if (this.$store.getters.isAuthenticated){
+          this.$router.push("/selection");
+
+        }
+        else{
+          alert('SignIn failed')
+        }
+
+        
+      } catch (error) {
+        console.log(error);
+        
+      }
       // Handle login logic here
-      this.$router.push("/selection");
+      // this.$router.push("/selection");
     },
     SignupAction(){
       this.$router.push('/signup')

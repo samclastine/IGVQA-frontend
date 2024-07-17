@@ -1,7 +1,7 @@
 import { createStore } from 'vuex';
 import authModule from "./auth/index";
 
-export default createStore({
+const store = createStore({
   state: {
     csvData: [],
     Fdata: [],
@@ -31,3 +31,4 @@ export default createStore({
     authModule
   },
 });
+export default store
