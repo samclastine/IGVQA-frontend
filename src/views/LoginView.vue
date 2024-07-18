@@ -34,7 +34,9 @@
   import { faChartBar } from '@fortawesome/free-solid-svg-icons';
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
   import { signIn , signOut, fetchAuthSession} from 'aws-amplify/auth';
-
+  import { Amplify } from 'aws-amplify';
+  import config from '../amplifyconfiguration.json'
+  Amplify.configure(config)
   library.add(faChartBar);
 
 export default {
